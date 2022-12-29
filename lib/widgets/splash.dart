@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:instagram/widgets/login_page.dart';
+import 'package:instagram/widgets/view_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -13,8 +14,8 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-    Timer(const Duration(seconds: 3),()=>
-        Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginPage())));
+    Timer(const Duration(seconds: 7),()=>
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>  LoginPage())));
     // ignore: todo
     // TODO: implement initState
     super.initState();
@@ -25,6 +26,8 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,

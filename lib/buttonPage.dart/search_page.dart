@@ -1,31 +1,68 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
-import 'package:instagram/widgets/view_page.dart';
+import 'package:instagram/buttonPage.dart/Instagram_Api/instagram_api.dart';
 
-class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
+class Search extends StatelessWidget {
+  const Search({super.key});
+
+
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-        body: Row(
-          children: [
-            Container(
-              height: 200,
-              color: Colors.red,
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: "Search",
-                  prefixIcon: Icon(Icons.search),
+      body:   ListView(
+              children: [
+                 Row(
+              children: [
+                Container(
+                  width: 320,
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  child: TextField(
+                    cursorColor: Colors.grey,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(color: Colors.grey)),
+                        hintText: "Search",
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(color: Colors.grey))),
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
-              ),
+                Icon(
+                  Icons.person_add_alt
+                )
+              ],
             ),
-            IconButton(onPressed: (){}, icon: Icon(Icons.person_add_alt ))
-          ],
-        ),
-      );
+            SizedBox(
+             height: 15,
+            ),
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    
+                    ),
+                    itemCount: 10,
+                   itemBuilder: (context, index)=> Container(
+                    height: MediaQuery.of(context).size.height/4,
+                    margin: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                    color: Colors.blue,
+                      image: DecorationImage(
+                        image: NetworkImage(instagramModel[index].images!),
+                        fit: BoxFit.cover
+                        )
+                    ),
+                   )
+                   ),
+              ],
+            ),
+     
+    );
   }
 }
