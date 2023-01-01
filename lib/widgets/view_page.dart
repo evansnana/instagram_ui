@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
-import 'package:instagram/buttonPage.dart/Instagram_Api/instagram_api.dart';
+import 'package:instagram/buttonPage.dart/instagram_api.dart';
+
 
 class ViewPage extends StatefulWidget {
   const ViewPage({super.key});
@@ -13,6 +14,7 @@ class _ViewPageState extends State<ViewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       backgroundColor: Colors.white,
       body: ListView(
         physics: const AlwaysScrollableScrollPhysics(),
@@ -50,7 +52,7 @@ class _ViewPageState extends State<ViewPage> {
             ],
           ),
           SizedBox(
-            height: 100,
+            height: 120,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 // ignore: list_remove_unrelated_type
@@ -64,9 +66,12 @@ class _ViewPageState extends State<ViewPage> {
                         Column(
                           children: [
                             CircleAvatar(
-                              radius: 30,
-                              backgroundImage:
+                              radius: 34,
+                                  child: CircleAvatar(
+                                    radius: 32,
+                                    backgroundImage:
                                   NetworkImage(instagramModel[index].images!),
+                                  )
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -124,11 +129,11 @@ class _ViewPageState extends State<ViewPage> {
                       Container(
                         height: 300,
                         decoration: BoxDecoration(
+                          color: Colors.grey,
                           image: DecorationImage(
                               image:
                                   NetworkImage(instagramModel[index].images!),
                               fit: BoxFit.cover),
-                          color: Colors.grey,
                         ),
                       ),
                       Row(
@@ -196,7 +201,7 @@ class _ViewPageState extends State<ViewPage> {
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold),
                           ),
-                          NewCard()
+                         
                         ]),
                       )
                     ]);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:instagram/buttonPage.dart/Instagram_Api/instagram_api.dart';
+import 'package:instagram/buttonPage.dart/instagram_api.dart';
 
 class Search extends StatelessWidget {
   const Search({super.key});
@@ -29,7 +29,7 @@ class Search extends StatelessWidget {
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(color: Colors.grey))),
-                    style: TextStyle(color: Colors.black),
+                  
                   ),
                 ),
                 Icon(

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
-import 'package:instagram/buttonPage.dart/movie_Page.dart';
-import 'package:instagram/buttonPage.dart/profile_page.dart';
-import 'package:instagram/buttonPage.dart/search_page.dart';
-import 'package:instagram/buttonPage.dart/shop_page.dart';
+import 'package:instagram/widgets/movie_Page.dart';
+import 'package:instagram/widgets/profile_page.dart';
+import 'package:instagram/widgets/search_page.dart';
+import 'package:instagram/widgets/shop_page.dart';
 
 import '../widgets/view_page.dart';
 
@@ -39,11 +39,11 @@ class _BottomNavState extends State<BottomNav> {
         unselectedItemColor: Colors.grey,
         backgroundColor: Colors.white,
           currentIndex: _CurrentIndex,
-          
+
           onTap: (index) => setState(() {
                 _CurrentIndex = index;
-              }),
-          items: [
+              }), 
+          items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home_filled),label: "home"),
             BottomNavigationBarItem(icon: Icon(FeatherIcons.search),label: "search"),
             BottomNavigationBarItem(icon: Icon(Icons.movie_filter_outlined),label: "movies"),
